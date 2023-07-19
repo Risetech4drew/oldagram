@@ -1,0 +1,93 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: lightgray;
+    font-family: 'Source Sans 3', sans-serif;
+}
+.oldagram-logo{
+    width: 127px;
+    fill: #000;
+}
+.avatar-img{
+    width: 34px;
+    border-radius: 50%;
+}
+header{
+    background: #fff;
+    padding: 16px 16px 17px 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 183px;
+    flex-shrink: 0;
+    border-bottom: 1px solid #C6C6C6;
+}
+.post{
+    margin-bottom: 20px;
+    background: #FFF;
+    padding-bottom: 5px;
+    width: 375px;
+    
+   
+}
+.post-header{
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+}
+.post-header-text h3{
+    margin-bottom: 0;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    
+}
+.post-header-text p{
+    margin-top: 0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    
+}
+.avatar-post-img{
+    width: 34px;
+    align-self: center;
+    border-radius: 50%;
+    
+}
+.post-img{
+    width: 375px;
+    
+}
+.post-footer{
+    width: 350px;
+    margin: 10px 0 10px 20px;
+   
+}
+.post-footer .likes {
+    margin: 0 0 12px 0;
+    font-weight: 700;
+}
+.post-footer .comment{
+    margin: 0;
+    font-size: 13px;
+    font-style: normal;   
+}
+ .post-footer .comment .boldUserName {
+    font-weight: 700;
+    margin-right: 5px;
+    
+}
+ .icons{
+   
+    margin: 0 0 10px 0;
+    width: 104px;
+    display: flex;
+    gap:10px;
+}
+
+.icon{
+    width: 25px;
+    
+}
