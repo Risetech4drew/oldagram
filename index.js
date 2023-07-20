@@ -131,6 +131,7 @@ for(let i = 0; i < posts.length; i++){
 }
 
 const heartIcons = document.querySelectorAll("#heartIcon")
+const postImgs =  document.querySelectorAll(".post-img")
 
    heartIcons.forEach(function(icon){
     icon.addEventListener("click", function(){
@@ -154,3 +155,20 @@ const heartIcons = document.querySelectorAll("#heartIcon")
 
     })
    })
+
+//    implementing double tapping of the post image to increase likes
+postImgs.forEach(function(post){
+    post.addEventListener("dblclick", function(){
+        
+        const parentPostDiv = post.closest('.post')
+
+        const likesCountEl = parentPostDiv.querySelector(".likesCount")
+
+        let currentLikes = parseInt(likesCountEl.textContent)
+
+        likesCountEl.textContent = currentLikes + 1
+
+
+
+    })
+})
