@@ -22,6 +22,9 @@ header{
     flex-shrink: 0;
     border-bottom: 1px solid #C6C6C6;
 }
+.posts_wrapper{
+    margin: 0 auto;
+}
 .post{
     margin-bottom: 20px;
     background: #FFF;
@@ -90,4 +93,8 @@ header{
 .icon{
     width: 25px;
     
+}
+.icon:hover{
+    opacity: 50%;
+
 }

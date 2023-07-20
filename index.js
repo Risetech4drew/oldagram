@@ -80,6 +80,7 @@ for(let i = 0; i < posts.length; i++){
     const heartIconImg = document.createElement("img")
     heartIconImg.classList.add("icon")
     heartIconImg.src = "images/icon-heart.png"
+    heartIconImg.setAttribute("id", "heartIcon")
     iconsWrapper.appendChild(heartIconImg)
 
     const commentsIconImg = document.createElement("img")
@@ -96,8 +97,14 @@ for(let i = 0; i < posts.length; i++){
 
     const likesEl = document.createElement("p")
     likesEl.classList.add("likes")
-    likesEl.textContent = `${post.likes} likes`
+    const likesCountEl = document.createElement("span")
+    likesCountEl.classList.add("likesCount")
+    likesCountEl.textContent = post.likes
+    likesEl.appendChild(likesCountEl)
+    likesEl.insertAdjacentText("beforeend","likes")
     postFooter.appendChild(likesEl)
+
+   
 
 
     const commentEl =  document.createElement("p")
@@ -120,9 +127,30 @@ for(let i = 0; i < posts.length; i++){
     postDiv.appendChild(postFooter)
 
     postContainer.appendChild(postDiv)
-    
-    
-    
 
 }
 
+const heartIcons = document.querySelectorAll("#heartIcon")
+
+   heartIcons.forEach(function(icon){
+    icon.addEventListener("click", function(){
+        
+    //    creating parentElement to group heart-icon and likesEl
+
+            const postFooterDiv = icon.closest('.post-footer')
+
+            // getting the likesEl within the parentElement
+            
+            const likesCountEl = postFooterDiv.querySelector(".likesCount")
+
+            // getting the current likes
+
+            let currentLikes = parseInt(likesCountEl.textContent)
+            
+            // increasing the current likes 
+
+            likesCountEl.textContent = currentLikes + 1
+
+
+    })
+   })
