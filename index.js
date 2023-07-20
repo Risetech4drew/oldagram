@@ -68,6 +68,7 @@ for(let i = 0; i < posts.length; i++){
     // rendering post image
     const postImg = document.createElement("img")
     postImg.classList.add("post-img")
+    postImg.setAttribute("data-clicked", "true")
     postImg.src = post.post
     postDiv.appendChild(postImg)
 
@@ -81,6 +82,7 @@ for(let i = 0; i < posts.length; i++){
     heartIconImg.classList.add("icon")
     heartIconImg.src = "images/icon-heart.png"
     heartIconImg.setAttribute("id", "heartIcon")
+    heartIconImg.setAttribute("data-clicked", "true")
     iconsWrapper.appendChild(heartIconImg)
 
     const commentsIconImg = document.createElement("img")
@@ -136,6 +138,7 @@ const postImgs =  document.querySelectorAll(".post-img")
    heartIcons.forEach(function(icon){
     icon.addEventListener("click", function(){
         
+        
     //    creating parentElement to group heart-icon and likesEl
 
             const postFooterDiv = icon.closest('.post-footer')
@@ -147,11 +150,29 @@ const postImgs =  document.querySelectorAll(".post-img")
             // getting the current likes
 
             let currentLikes = parseInt(likesCountEl.textContent)
+
+           if(icon.dataset.clicked === "true") {
+
+                
+
+                likesCountEl.textContent = currentLikes + 1
+
+                icon.removeAttribute("data-clicked")
+
+           } else {
+            !icon.hasAttribute("data-clicked")
+
             
-            // increasing the current likes 
 
-            likesCountEl.textContent = currentLikes + 1
+            likesCountEl.textContent = currentLikes - 1
 
+            icon.dataset.clicked === "true"
+
+           }
+
+
+
+            
 
     })
    })
@@ -166,7 +187,13 @@ postImgs.forEach(function(post){
 
         let currentLikes = parseInt(likesCountEl.textContent)
 
-        likesCountEl.textContent = currentLikes + 1
+        if(icon.dataset.clicked === "clicked"){
+
+            likesCountEl.textContent = currentLikes + 1
+
+        }
+
+        
 
 
 
